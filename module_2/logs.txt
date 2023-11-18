@@ -1,0 +1,4 @@
+[10:05:34] Addressbook has been loaded!
+[19:03:59] Addressbook has been loaded!
+[19:05:09] Contact Karynd has been added.
+[19:05:09] Addressbook has been saved!

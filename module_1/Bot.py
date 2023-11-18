@@ -1,4 +1,4 @@
-from AddressBook import *
+from module_1.AddressBook import *
 
 
 class Bot:

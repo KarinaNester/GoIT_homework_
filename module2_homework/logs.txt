@@ -1,1 +1,0 @@
-[10:05:34] Addressbook has been loaded!
