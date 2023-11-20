@@ -22,4 +22,4 @@ COPY . .
 EXPOSE 3000
 
 # Запустимо наш застосунок всередині контейнера
-CMD ["python3", "app.py"]
+CMD ["python3", "main.py"]
