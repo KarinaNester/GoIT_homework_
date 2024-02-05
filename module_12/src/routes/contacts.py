@@ -55,3 +55,6 @@ async def get_upcoming_birthdays(
 
     contacts = await repositories_contacts.get_contacts_by_birthday_range(today, next_week, db, current_user.id)
     return contacts
+
+
+
