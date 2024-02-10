@@ -1,0 +1,5 @@
+/module_8/m16_08_01/
+/module_8/m16_08_02/
+.env
+poetry.lock
+.idea/
