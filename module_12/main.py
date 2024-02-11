@@ -52,7 +52,7 @@ async def user_agent_ban_middleware(request: Request, call_next: Callable):
     response = await call_next(request)
     return response
 
-BASE_DIR = Path(".")
+BASE_DIR = Path(__file__)
 
 app.include_router(auth.router, prefix="/api")
 app.include_router(users.router, prefix="/api")
