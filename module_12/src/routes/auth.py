@@ -71,6 +71,9 @@ async def confirmed_email(token: str, db: AsyncSession = Depends(get_db)):
 
 
 
+
+
+
 @router.post('/request_email')
 async def request_email(body: RequestEmail, background_tasks: BackgroundTasks, request: Request,
                         db: AsyncSession = Depends(get_db)):
