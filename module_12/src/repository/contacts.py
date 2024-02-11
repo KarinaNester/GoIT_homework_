@@ -6,12 +6,31 @@ from src.entity.models import Contact, User
 from src.schemas.contact import ContactSchema, ContactUpdateSchema
 
 async def get_contacts(limit: int, offset: int, db: AsyncSession, user: User):
+    """
+    The get_contacts function returns a list of contacts for the user.
+
+    :param limit: int: Limit the number of contacts returned
+    :param offset: int: Specify the number of rows to skip
+    :param db: AsyncSession: Pass the database session to the function
+    :param user: User: Get the user id from the user object
+    :return: A list of contact objects
+    :doc-author: Trelent
+    """
     stmt = select(Contact).filter_by(user_id=user.id).offset(offset).limit(limit)
     contacts = await db.execute(stmt)
     return contacts.scalars().all()
 
 
 async def create_contact(body: ContactSchema, db: AsyncSession, user: User):
+    """
+    The create_contact function creates a new contact in the database.
+
+    :param body: ContactSchema: Validate the request body against the contactschema schema
+    :param db: AsyncSession: Pass the database session to the function
+    :param user: User: Get the user_id from the session
+    :return: The contact object
+    :doc-author: Trelent
+    """
     contact = Contact(**body.model_dump(exclude_unset=True), user=user)  # (title=body.title, description=body.description)
     db.add(contact)
     await db.commit()
